@@ -22,7 +22,7 @@ def handle(msg):
     else:
         bot.sendMessage(chat_id, 'I did not understand you')
 
-bottoken = open('/home/pi/teletorrentbottoken.txt', 'e')
+bottoken = open('/home/pi/teletorrentbottoken.txt', 'r')
 bot = telepot.Bot(bottoken.read())
 
 MessageLoop(bot, handle).run_as_thread()
