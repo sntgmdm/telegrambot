@@ -2,7 +2,7 @@ import sys
 import time
 import random
 import datetime
-import ipgetter
+import getip
 import telepot
 from telepot.loop import MessageLoop
 
@@ -17,7 +17,7 @@ def handle(msg):
     elif command == '/time':
         bot.sendMessage(chat_id, str(datetime.datetime.now()))
     elif command == '/spitip':
-        bot.sendMessage(chat_id, str(ipgetter.myip()))
+        bot.sendMessage(chat_id, str(getip.get()))
     else:
         bot.sendMessage(chat_id, 'I did not understand you')
 
