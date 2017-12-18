@@ -1,4 +1,5 @@
 import sys
+import os
 import time
 import random
 import datetime
@@ -21,7 +22,8 @@ def handle(msg):
     else:
         bot.sendMessage(chat_id, 'I did not understand you')
 
-bot = telepot.Bot('*** INSERT TOKEN ***')
+bottoken = open('/home/pi/teletorrentbottoken.txt', 'e')
+bot = telepot.Bot(bottoken.read())
 
 MessageLoop(bot, handle).run_as_thread()
 print 'I am listening ...'
