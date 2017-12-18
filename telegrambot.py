@@ -23,7 +23,7 @@ def handle(msg):
         bot.sendMessage(chat_id, 'I did not understand you')
 
 bottoken = open('/home/pi/teletorrentbottoken.txt', 'r')
-bot = telepot.Bot(str(bottoken.read()))
+bot = telepot.Bot(str(bottoken.readline()))
 
 MessageLoop(bot, handle).run_as_thread()
 print 'I am listening ...'
