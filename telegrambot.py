@@ -7,11 +7,9 @@ from telepot.loop import MessageLoop
 
 def handle(msg):
     chat_id = msg['chat']['id']
-    message_id = msg['id']
-    message_chat = msg['chat']
     command = msg['text']
 
-    print 'Got command: '+ command + ' from: ' + str(chat_id) + ' message_id ' + str(message_id) + ' message_chat ' + str(message_id)
+    print 'Got command: '+ command + ' from: ' + str(chat_id)
 
     if command == '/roll':
         bot.sendMessage(chat_id, random.randint(1,6))
