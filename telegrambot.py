@@ -9,7 +9,7 @@ def handle(msg):
     chat_id = msg['chat']['id']
     command = msg['text']
 
-    print 'Got command: %s' % command ' from: %s' % chat_id
+    print 'Got command: '+ command + ' from: ' + chat_id
 
     if command == '/roll':
         bot.sendMessage(chat_id, random.randint(1,6))
