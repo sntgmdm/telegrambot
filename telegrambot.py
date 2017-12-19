@@ -20,7 +20,7 @@ def handle(msg):
         bot.sendMessage(chat_id, str(datetime.datetime.now()))
     elif command == '/spitip':
         bot.sendMessage(chat_id, str(getip.get()))
-    elif command == '/aziz'
+    elif command == '/aziz':
         if light:
             bot.sendMessage(chat_id, 'Good boy Aziz')
         else:
