@@ -1,11 +1,12 @@
-import sys
 import os
+import sys
 import time
 import random
 import datetime
 import getip
 import telepot
 from telepot.loop import MessageLoop
+from uptime import uptime
 
 light = False
 
@@ -23,6 +24,8 @@ def handle(msg):
         bot.sendMessage(chat_id, str(datetime.datetime.now()))
     elif command == '/spitip':
         bot.sendMessage(chat_id, str(getip.get()))
+    elif command == '/uptime':
+        bot.sendMessage(chat_id, 'The system uptime is:', uptime())
     elif command == '/aziz':
         light = not(light)
         if light:
