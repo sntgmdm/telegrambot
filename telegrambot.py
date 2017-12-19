@@ -25,7 +25,7 @@ def handle(msg):
     elif command == '/spitip':
         bot.sendMessage(chat_id, str(getip.get()))
     elif command == '/uptime':
-        uptimemessage = 'The system uptime is:', uptime()
+        uptimemessage = 'The system uptime is: ' + uptime()
         bot.sendMessage(chat_id, uptimemessage)
     elif command == '/aziz':
         light = not(light)
