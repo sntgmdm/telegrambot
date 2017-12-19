@@ -10,6 +10,7 @@ from telepot.loop import MessageLoop
 light = False
 
 def handle(msg):
+    global light
     chat_id = msg['chat']['id']
     command = msg['text']
 
@@ -23,7 +24,7 @@ def handle(msg):
     elif command == '/spitip':
         bot.sendMessage(chat_id, str(getip.get()))
     elif command == '/aziz':
-        global light = not(global light)
+        light = not(light)
         if light:
             bot.sendMessage(chat_id, 'Good boy Aziz')
         else:
