@@ -7,10 +7,12 @@ import getip
 import telepot
 from telepot.loop import MessageLoop
 
+light = False
+
 def handle(msg):
     chat_id = msg['chat']['id']
     command = msg['text']
-    light = False
+
 
     print 'Got command: '+ command + ' from: ' + str(chat_id)
 
