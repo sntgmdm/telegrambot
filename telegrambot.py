@@ -10,7 +10,7 @@ from telepot.loop import MessageLoop
 def handle(msg):
     chat_id = msg['chat']['id']
     command = msg['text']
-    light = false
+    light = False
 
     print 'Got command: '+ command + ' from: ' + str(chat_id)
 
