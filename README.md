@@ -22,3 +22,10 @@ to kill the python process:
 #ps -ef | grep python
 2nd kill the PID
 #kill -9 2430
+
+list of bot commands commands:
+roll - Roll 1d6
+time - Report current time
+spitip - Blurt the current public IP
+uptime - Give the total uptime
+aziz - Play with Aziz and feel like exploring an alien cave
