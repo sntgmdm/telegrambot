@@ -20,8 +20,7 @@ def handle(msg):
         bot.sendMessage(chat_id, str(datetime.datetime.now()))
     elif command == '/spitip':
         bot.sendMessage(chat_id, str(getip.get()))
-    elif command == '/aziz':
-        light ^= light
+    elif command == '/aziz'
         if light:
             bot.sendMessage(chat_id, 'Good boy Aziz')
         else:
@@ -31,6 +30,7 @@ def handle(msg):
 
 bottoken = open('/home/pi/teletorrentbottoken.txt', 'r').read().splitlines()
 bot = telepot.Bot(bottoken[0])
+bottoken.close()
 
 MessageLoop(bot, handle).run_as_thread()
 print 'I am listening ...'
