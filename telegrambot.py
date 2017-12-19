@@ -23,10 +23,9 @@ def handle(msg):
     elif command == '/aziz':
         if light:
             bot.sendMessage(chat_id, 'Good boy Aziz')
-            light = !light
         else:
             bot.sendMessage(chat_id, 'Aziz light!!!')
-            light = !light
+        light = not light
     else:
         bot.sendMessage(chat_id, 'I did not understand you')
 
