@@ -9,3 +9,6 @@ On my Rasberry, when updating the code I use:
 #git reset --hard origin/master
 
 this way I just have to add the chatbot TOKEN
+
+forget the old ways! the token is stored in a separate file in the /home/pi folder, now I cann just:
+#git pull
