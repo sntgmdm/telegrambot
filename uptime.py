@@ -19,7 +19,7 @@ def uptime():
      hours   = int( ( total_seconds % DAY ) / HOUR )
      minutes = int( ( total_seconds % HOUR ) / MINUTE )
      seconds = int( total_seconds % MINUTE )
- 
+
      string = ""
      if days > 0:
          string += str(days) + " " + (days == 1 and "day" or "days" ) + ", "
