@@ -16,5 +16,5 @@ def quotechequer ( quote_tbc ):
         print "empty quote"
         bashquote(random.randint(7,963184))
     else:
-        "quote_tbc is of type: " + str(type(quote_tbc))
+        print "quote_tbc is of type: " + str(type(quote_tbc))
         yield quote_tbc
