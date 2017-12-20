@@ -24,11 +24,12 @@ to kill the python process:
 #kill -9 2430
 
 list of bot commands commands:
-roll - Roll 1d6
+bash - Grabs a quote from bash.org and send it you
 time - Report current time
 spitip - Blurt the current public IP
 uptime - Give the total uptime
 aziz - Play with Aziz and feel like exploring an alien cave
+roll - Roll 1d6
 
 Things that need to be installed with pip for this to work
 
