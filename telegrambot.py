@@ -40,7 +40,7 @@ def handle(msg):
         bot.sendMessage(chat_id, "The quote is:")
         for quote_sentence in quote_tbs:
             bot.sendMessage(chat_id, quote_sentence)
-    elif: commadn == '/help' or command == '/?':
+    elif: command == '/help' or command == '/?':
         bot.sendMessage(chat_id, 'bash - Grabs a quote from bash.org and send it you\n' +
         '/time - Report current time\n' +
         '/spitip - Blurt the current public IP\n' +
