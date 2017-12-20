@@ -35,7 +35,7 @@ def handle(msg):
         else:
             bot.sendMessage(chat_id, 'Aziz light!!!')
     elif command == '/bash':
-        quote_tbs = bashquote(random.randint(7,963184))
+        quote_tbs = list(bashquote(random.randint(7,963184)))
         for quote_sentence in quote_tbs:
             bot.sendMessage(chat_id, quote_sentence)
     else:

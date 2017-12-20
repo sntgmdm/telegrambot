@@ -6,8 +6,8 @@ def bashquote( randnum ):
     bash = requests.get('http://bash.org/?' + str(randnum))
     bashtree = html.fromstring(bash.content)
     quote = bashtree.xpath('//p[@class="qt"]/text()')
+    print type(quote)
     quote_text = list(quotechequer(quote))
-    print type(quote_text)
     yield quote_text
 
 def quotechequer ( quote_tbc ):
