@@ -29,3 +29,14 @@ time - Report current time
 spitip - Blurt the current public IP
 uptime - Give the total uptime
 aziz - Play with Aziz and feel like exploring an alien cave
+
+Things that need to be installed with pip for this to work
+
+#pip install telepot
+#pip install getip2
+http://lxml.de/installation.html
+#sudo apt-get install python-dev libxml2-dev libxslt1-dev zlib1g-dev
+#pip install lxml (this can take a looooong time on a Rasberry Pi 2)
+#pip install requests
+
+http://docs.python-guide.org/en/latest/scenarios/scrape/
