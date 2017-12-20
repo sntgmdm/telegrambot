@@ -8,7 +8,7 @@ def bashquote( randnum ):
     quote = bashtree.xpath('//p[@class="qt"]/text()')
     quote_text = quotechequer(quote)
     quote_result = quote_text
-    print "quote_result is of type: " + type(quote_result)
+    print "quote_result is of type: " + str(type(quote_result))
     yield quote_result
 
 def quotechequer ( quote_tbc ):
