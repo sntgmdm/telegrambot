@@ -7,7 +7,7 @@ import getip
 import telepot
 from telepot.loop import MessageLoop
 from uptime import uptime
-from bashquote import bashquote
+from bashquote import *
 
 light = False
 
@@ -36,7 +36,6 @@ def handle(msg):
             bot.sendMessage(chat_id, 'Aziz light!!!')
     elif command == '/bash':
         quote_tbs = bashquote(random.randint(7,963184))
-        print "quote_tbs is of type: " + str(type(quote_tbs))
         for quote_sentence in quote_tbs:
             bot.sendMessage(chat_id, quote_sentence)
     else:
