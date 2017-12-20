@@ -8,7 +8,6 @@ def bashquote(randnum):
     quote = bashtree.xpath('//p[@class="qt"]/text()')
     if not quote:
         print "empty quote"
-        bashquote(random.randint(7,963184))
-        print "after calling myself"
+        return bashquote(random.randint(7,963184))
     else:
         yield quote
