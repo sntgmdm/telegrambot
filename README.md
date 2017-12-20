@@ -24,6 +24,7 @@ to kill the python process:
 #kill -9 2430
 
 list of bot commands commands:
+help - Lists these commands below
 bash - Grabs a quote from bash.org and send it you
 time - Report current time
 spitip - Blurt the current public IP
