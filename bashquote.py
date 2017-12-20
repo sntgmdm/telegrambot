@@ -10,9 +10,8 @@ def bashquote( randnum ):
 
 def quotechequer ( quote_tbc ):
     if not quote_tbc:
-        print 'empty quote'
+        bashquote(random.randint(7,963184))
     else:
         print quote_tbc
 
-random_generation = random.randint(7,8)
-bashquote(random_generation)
+bashquote(random.randint(7,963184))
