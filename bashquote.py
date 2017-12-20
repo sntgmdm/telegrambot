@@ -14,6 +14,6 @@ def quotechequer ( quote_tbc ):
         print "empty quote"
         bashquote(random.randint(7,963184))
     else:
-        print repr(quote_tbs)
+        print repr(quote_tbc)
         print quote_tbc
         return quote_tbc
