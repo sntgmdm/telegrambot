@@ -10,4 +10,4 @@ def bashquote(randnum):
         print "empty quote"
         return bashquote(random.randint(7,963184))
     else:
-        yield quote
+        return quote
