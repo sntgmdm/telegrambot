@@ -10,9 +10,11 @@ from uptime import uptime
 from bashquote import bashquote
 
 light = False
+reboot_check = False
 
 def handle(msg):
     global light
+    global reboot_check
     chat_id = msg['chat']['id']
     command = msg['text']
 
@@ -49,6 +51,10 @@ def handle(msg):
         '/aziz - Play with Aziz and feel like exploring an alien cave\n' +
         '/roll - Roll 1d6')
     elif command == '/reboot':
+        bot.sendMessage(chat_id, 'Enter the reboot password at any time')
+        reboot_check = True
+    elif command == open('/home/pi/rebootpassword.txt', 'r').read().splitlines() and reboot_check:
+        bot.sendMessage(chat_id, 'Rebooting now')
         os.system('reboot')
     else:
         bot.sendMessage(chat_id, 'I did not understand you')
