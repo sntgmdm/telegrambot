@@ -53,7 +53,7 @@ def handle(msg):
     elif command == '/reboot':
         bot.sendMessage(chat_id, 'Enter the reboot password at any time')
         reboot_check = True
-    elif command == open('/home/pi/rebootpassword.txt', 'r').read().splitlines() and reboot_check:
+    elif command == open('/home/pi/rebootpassword.txt', 'r').read().splitlines()[0] and reboot_check:
         bot.sendMessage(chat_id, 'Rebooting now')
         os.system('reboot')
     else:
