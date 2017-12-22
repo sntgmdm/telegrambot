@@ -48,6 +48,8 @@ def handle(msg):
         '/uptime - Give the total uptime\n' +
         '/aziz - Play with Aziz and feel like exploring an alien cave\n' +
         '/roll - Roll 1d6')
+    elif command == '/reboot':
+        os.system('reboot')
     else:
         bot.sendMessage(chat_id, 'I did not understand you')
 
