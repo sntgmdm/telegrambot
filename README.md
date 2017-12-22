@@ -32,6 +32,10 @@ uptime - Give the total uptime
 aziz - Play with Aziz and feel like exploring an alien cave
 roll - Roll 1d6
 
+non declared on botfather
+/reboot
+there is a /home/pi/rebootpassword.txt file to add some security to the reboot command
+
 Things that need to be installed with pip for this to work
 
 #pip install telepot
