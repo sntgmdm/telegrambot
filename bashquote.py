@@ -5,9 +5,9 @@ import random
 def bashquote(randnum):
     #select a random quote page (1-422)
     pre_bash = requests.get('http://bash.org/?browse&p=' + str(randnum))
-    pre_bashtree = html.fromstring(bash.content)
+    pre_bashtree = html.fromstring(pre_bash.content)
     #list of all quote numbers of the random site
-    pre_quote_nums = bashtree.xpath('//p[@class="quote"]/a/b/text()')
+    pre_quote_nums = pre_bashtree.xpath('//p[@class="quote"]/a/b/text()')
     #select one item from the lsit. it's in the #XXXXXXXXX format we need to remove the #
     quote_pre = quote_nums[random.randint(0,len(quote))]
     #type should be string
