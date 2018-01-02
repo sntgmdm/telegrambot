@@ -9,7 +9,7 @@ def bashquote(randnum,chat_id):
     #list of all quote numbers of the random site
     pre_quote_nums = pre_bashtree.xpath('//p[@class="quote"]/a/b/text()')
     #select one item from the lsit. it's in the #XXXXXXXXX format we need to remove the #
-    quote_pre = pre_quote_nums[random.randint(0,len(pre_quote_nums))]
+    quote_pre = pre_quote_nums[random.randint(0,len(pre_quote_nums)-1)]
     #type should be string
     quote = quote_pre[1:]
     bash = requests.get('http://bash.org/?' + quote)
