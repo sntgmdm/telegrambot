@@ -17,6 +17,7 @@ def bashquote(randnum):
     quote_text = bashtree.xpath('//p[@class="qt"]/text()')
 
     bashlog = open('bashlog.txt', 'a')
-    bashlog.wirte(quote)
+    bashlog.write(quote)
+    bashlog.close()
 
     return quote_text
