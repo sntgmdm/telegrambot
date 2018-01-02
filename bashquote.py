@@ -2,7 +2,7 @@ from lxml import html
 import requests
 import random
 
-def bashquote(randnum):
+def bashquote(randnum,chat_id):
     #select a random quote page (1-422)
     pre_bash = requests.get('http://bash.org/?browse&p=' + str(randnum))
     pre_bashtree = html.fromstring(pre_bash.content)
@@ -16,8 +16,8 @@ def bashquote(randnum):
     bashtree = html.fromstring(bash.content)
     quote_text = bashtree.xpath('//p[@class="qt"]/text()')
 
-    bashlog = open('bashlog.txt', 'a')
-    bashlog.write(quote)
+    bashlog = open('bash.log', 'a')
+    bashlog.write('Quote number #' + quote + 'served to :' +str(chat_id) + '\n')
     bashlog.close()
 
     return quote_text
