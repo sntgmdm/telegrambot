@@ -42,7 +42,7 @@ def handle(msg):
     elif command == '/bash':
         bot.sendMessage(chat_id, "Be patient I'm choosing a random quote!")
         #422 is the last site of all quotes in bash.org
-        quote_tbs = bashquote(random.randint(1,422))
+        quote_tbs = bashquote(random.randint(1,422),chat_id)
         bot.sendMessage(chat_id, "The quote is:")
         for quote_sentence in quote_tbs:
             bot.sendMessage(chat_id, quote_sentence)
