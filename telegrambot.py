@@ -10,14 +10,17 @@ from uptime import uptime
 from bashquote import bashquote
 
 light = False
-reboot_check = False
+REBOOT_CHECK = False
+
+resetpassfile = open('/home/pi/rebootpassword.txt', 'r')
+RESETPASS = resetpassfile.read().splitlines()
+resetpassfile.close()
 
 def handle(msg):
     global light
-    global reboot_check
+    global REBOOT_CHECK, RESETPASS
     chat_id = msg['chat']['id']
     command = msg['text']
-
 
     print 'Got command: '+ command + ' from: ' + str(chat_id)
 
@@ -38,7 +41,8 @@ def handle(msg):
             bot.sendMessage(chat_id, 'Aziz light!!!')
     elif command == '/bash':
         bot.sendMessage(chat_id, "Be patient I'm choosing a random quote!")
-        quote_tbs = bashquote(random.randint(7,963184))
+        #422 is the last site of all quotes in bash.org
+        quote_tbs = bashquote(random.randint(1,422))
         bot.sendMessage(chat_id, "The quote is:")
         for quote_sentence in quote_tbs:
             bot.sendMessage(chat_id, quote_sentence)
@@ -52,16 +56,17 @@ def handle(msg):
         '/roll - Roll 1d6')
     elif command == '/reboot':
         bot.sendMessage(chat_id, 'Enter the reboot password at any time')
-        reboot_check = True
-    elif command == open('/home/pi/rebootpassword.txt', 'r').read().splitlines()[0] and reboot_check:
+        REBOOT_CHECK = True
+    elif command == RESETPASS[0] and REBOOT_CHECK:
         bot.sendMessage(chat_id, 'Rebooting now')
         os.system('reboot')
     else:
         bot.sendMessage(chat_id, 'I did not understand you')
 
-bottoken = open('/home/pi/teletorrentbottoken.txt', 'r').read().splitlines()
+bottokenfile = open('/home/pi/teletorrentbottoken.txt', 'r')
+bottoken = bottokenfile.read().splitlines()
+bottokenfile.close()
 bot = telepot.Bot(bottoken[0])
-
 
 MessageLoop(bot, handle).run_as_thread()
 print 'I am listening ...'
