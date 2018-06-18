@@ -53,6 +53,7 @@ def handle(msg):
             bot.sendMessage(chat_id, quote_sentence)
     elif command == '/help' or command == '/?':
         bot.sendMessage(chat_id, '/help - Lists these commands below (/?) is also accepted\n' +
+        '/torrentstatus - Gives you the status of the torrents (not working)\n' +
         '/bash - Grabs a quote from bash.org and send it you\n' +
         '/time - Report current time\n' +
         '/spitip - Blurt the current public IP\n' +
