@@ -8,7 +8,8 @@ import telepot
 from telepot.loop import MessageLoop
 from uptime import uptime
 from bashquote import bashquote
-
+import subprocess
+import shlex
 light = False
 REBOOT_CHECK = False
 
@@ -60,6 +61,11 @@ def handle(msg):
     elif command == RESETPASS[0] and REBOOT_CHECK:
         bot.sendMessage(chat_id, 'Rebooting now')
         os.system('reboot')
+    elif command == '/torrentstatus':
+        command = shlex.split('deluge-console "info ; exit"')
+        process = subprocess.Popen(command, stdout=subprocess.PIPE)
+        output, err = process.communicate()
+        bot.sendMessage(chat_id, str(output))
     else:
         bot.sendMessage(chat_id, 'I did not understand you')
 
