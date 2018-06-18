@@ -17,6 +17,10 @@ resetpassfile = open('/home/pi/rebootpassword.txt', 'r')
 RESETPASS = resetpassfile.read().splitlines()
 resetpassfile.close()
 
+localclientpwdfile = open('/home/pi/delugelocalclient.txt', 'r')
+LOCALCLIENTPWD = resetpassfile.read().splitlines()
+localclientpwdfile.close()
+
 def handle(msg):
     global light
     global REBOOT_CHECK, RESETPASS
@@ -62,7 +66,7 @@ def handle(msg):
         bot.sendMessage(chat_id, 'Rebooting now')
         os.system('reboot')
     elif command == '/torrentstatus':
-        command = shlex.split('deluge-console "info ; exit"')
+        command = shlex.split('deluge-console "conect localhost:58846 localclient ' + str(LOCALCLIENTPWD[0]) + ' ; info ; exit"')
         process = subprocess.Popen(command, stdout=subprocess.PIPE)
         output, err = process.communicate()
         bot.sendMessage(chat_id, str(output))
