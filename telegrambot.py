@@ -18,7 +18,7 @@ RESETPASS = resetpassfile.read().splitlines()
 resetpassfile.close()
 
 localclientpwdfile = open('/home/pi/delugelocalclient.txt', 'r')
-LOCALCLIENTPWD = resetpassfile.read().splitlines()
+LOCALCLIENTPWD = localclientpwdfile.read().splitlines()
 localclientpwdfile.close()
 
 def handle(msg):
