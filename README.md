@@ -23,8 +23,9 @@ to kill the python process:
 2nd kill the PID
 #kill -9 2430
 
-list of bot commands commands:
+list of bot commands:
 help - Lists these commands below (/?) is also accepted
+torrentstatus - Gives you the status of the torrents (not working)
 bash - Grabs a quote from bash.org and send it you
 time - Report current time
 spitip - Blurt the current public IP

@@ -53,7 +53,7 @@ def handle(msg):
             bot.sendMessage(chat_id, quote_sentence)
     elif command == '/help' or command == '/?':
         bot.sendMessage(chat_id, '/help - Lists these commands below (/?) is also accepted\n' +
-        '/torrentstatus - Gives you the status of the torrents (not working)\n' +
+        '/torrentstatus - Gives you the status of the torrents\n' +
         '/bash - Grabs a quote from bash.org and send it you\n' +
         '/time - Report current time\n' +
         '/spitip - Blurt the current public IP\n' +
@@ -67,6 +67,7 @@ def handle(msg):
         bot.sendMessage(chat_id, 'Rebooting now')
         os.system('reboot')
     elif command == '/torrentstatus':
+        bot.sendMessage(chat_id, "Hold on I'm checking Deluge...\n")
         command = shlex.split('deluge-console "connect 127.0.0.1:58846 localclient ' + LOCALCLIENTPWD[0] + ' ; info ; exit"')
         process = subprocess.Popen(command, stdout=subprocess.PIPE)
         output, err = process.communicate()
