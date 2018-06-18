@@ -72,6 +72,7 @@ def handle(msg):
         process = subprocess.Popen(command, stdout=subprocess.PIPE)
         output, err = process.communicate()
         bot.sendMessage(chat_id, str(output))
+        bot.sendMessage(chat_id, "These were all the Torrents")
     else:
         bot.sendMessage(chat_id, 'I did not understand you')
 
