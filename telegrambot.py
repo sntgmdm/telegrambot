@@ -66,7 +66,7 @@ def handle(msg):
         bot.sendMessage(chat_id, 'Rebooting now')
         os.system('reboot')
     elif command == '/torrentstatus':
-        command = shlex.split('deluge-console "conect localhost:58846 pi ' + str(LOCALCLIENTPWD[0]) + ' ; info ; exit"')
+        command = shlex.split('deluge-console "conect 127.0.0.1:58846 localclient '+ str(LOCALCLIENTPWD[0]) +'; info ; exit"')
         process = subprocess.Popen(command, stdout=subprocess.PIPE)
         output, err = process.communicate()
         bot.sendMessage(chat_id, str(output))
