@@ -5,7 +5,7 @@ import os
 
 def bashquote(randnum,chat_id):
     #type the path where the bash.log will be if __name__ == '__main__':
-    bashlog_path = os.path.join(os.path.expanduser('~'), 'telegrambot', 'bash.log')
+    bashlog_path = os.path.join('/', 'home', 'pi', 'telegrambot', 'bash.log')
     #select a random quote page (1-422)
     pre_bash = requests.get('http://bash.org/?browse&p=' + str(randnum))
     pre_bashtree = html.fromstring(pre_bash.content)
