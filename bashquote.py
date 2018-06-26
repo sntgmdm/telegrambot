@@ -1,6 +1,7 @@
 from lxml import html
 import requests
 import random
+import time
 import os
 
 def bashquote(randnum,chat_id):
