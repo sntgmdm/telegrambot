@@ -20,7 +20,7 @@ def bashquote(randnum,chat_id):
     quote_text = bashtree.xpath('//p[@class="qt"]/text()')
     #save the quote number and sender in the logfile
     bashlog = open(bashlog_path, 'a')
-    bashlog.write('Quote number #' + quote + ' served to: ' +str(chat_id) + '\n')
+    bashlog.write('Quote number #' + quote + ' served to: ' +str(chat_id) + ' on: ' + str(datetime.datetime.now()) + '\n')
     bashlog.close()
     #finaly retrun the quote to the main loop
     return quote_text
