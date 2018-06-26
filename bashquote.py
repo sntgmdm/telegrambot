@@ -1,8 +1,11 @@
 from lxml import html
 import requests
 import random
+import os
 
 def bashquote(randnum,chat_id):
+    #type the path where the bash.log will be if __name__ == '__main__':
+    bashlog_path = os.path.join(os.path.expanduser('~'), 'telegrambot', 'bash.log')
     #select a random quote page (1-422)
     pre_bash = requests.get('http://bash.org/?browse&p=' + str(randnum))
     pre_bashtree = html.fromstring(pre_bash.content)
@@ -16,7 +19,7 @@ def bashquote(randnum,chat_id):
     bashtree = html.fromstring(bash.content)
     quote_text = bashtree.xpath('//p[@class="qt"]/text()')
     #save the quote number and sender in the logfile
-    bashlog = open('~/bash.log', 'a')
+    bashlog = open(bashog_path, 'a')
     bashlog.write('Quote number #' + quote + ' served to: ' +str(chat_id) + '\n')
     bashlog.close()
     #finaly retrun the quote to the main loop
