@@ -15,9 +15,9 @@ def bashquote(randnum,chat_id):
     bash = requests.get('http://bash.org/?' + quote)
     bashtree = html.fromstring(bash.content)
     quote_text = bashtree.xpath('//p[@class="qt"]/text()')
-
+    #save the quote number and sender in the logfile
     bashlog = open('bash.log', 'a')
     bashlog.write('Quote number #' + quote + ' served to: ' +str(chat_id) + '\n')
     bashlog.close()
-
+    #finaly retrun the quote to the main loop
     return quote_text
