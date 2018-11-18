@@ -26,4 +26,3 @@ def bashquote(randnum,chat_id):
     bashlog.close()
     #finaly retrun the quote to the main loop
     return quote_text
-asd
